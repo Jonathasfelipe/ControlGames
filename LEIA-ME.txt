@@ -1,0 +1,28 @@
+CONTROL GAMES — CÓDIGO EDITÁVEL
+
+Comece abrindo index.html. Você pode abrir o arquivo diretamente no navegador,
+sem instalar nada. Para editar, abra a pasta inteira no Visual Studio Code.
+
+ARQUIVOS
+  index.html  — textos, seções, notícias e links do arcade
+  base.css    — estilos e grades da estrutura original; versão responsiva
+  theme.css   — tema escuro e verde neon, cores e fundos laterais
+  app.js      — menu móvel, campo de busca e filtros das notícias
+  assets/left-art.png  — arte decorativa da lateral esquerda
+  assets/right-art.png — arte decorativa da lateral direita
+
+COMO ALTERAR
+  • Marca e textos: edite index.html e busque CONTROL ou o título desejado.
+  • Cores e transparência das laterais: edite theme.css; busque :root e .background-art.
+  • Notícias: cada <article class="news-card"> fica em index.html; edite seus links e textos.
+  • Arcade: procure a seção <section ... id="jogos"> no index.html.
+  • Menu, busca e filtros: edite app.js e os botões HTML na seção notícias.
+
+ATENÇÃO
+  • Preserve os caminhos relativos (base.css, theme.css, app.js, assets/).
+  • O jogo Space Invaders continua apontando para o site público atual.
+  • As capas das notícias vêm de URLs externas: requerem conexão e podem falhar.
+  • Este é um site estático; não possui atualização automática de notícias.
+  • O pacote não publica o site na internet.
+  • Para trocar as imagens de fundo, substitua os PNGs na pasta assets
+    mantendo os nomes; ou altere os caminhos em theme.css.

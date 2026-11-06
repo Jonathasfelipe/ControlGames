@@ -1,0 +1,176 @@
+/* CONTROL GAMES — visual editorial gamer, inspirado em interfaces de portais de mods.
+   Tema: preto, branco e verde neon. A montagem de personagens serve apenas de decoração lateral. */
+:root{
+ --paper:#080d0a;--white:#141b16;--ink:#f4f8f3;--ink-soft:#c3cec5;
+ --muted:#a0aea4;--line:#28382b;--red:#59ff46;--dark:#0c150e;
+ --width:1190px;--radius:12px;
+ --glass:rgba(15,24,17,.97);--shadow:0 18px 55px rgba(0,0,0,.22);
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:94px}
+body{position:relative;isolation:isolate;min-height:100%;overflow-x:hidden;background:
+ radial-gradient(ellipse 70% 700px at 50% 0,rgba(32,90,39,.24),transparent 75%),
+ linear-gradient(180deg,#070b08 0%,#0a100d 36%,#080b09 100%);
+ color:var(--ink)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-3;opacity:.26;
+ background-image:linear-gradient(#70f5660a 1px,transparent 1px),linear-gradient(90deg,#70f5660a 1px,transparent 1px);
+ background-size:64px 64px;mask-image:linear-gradient(to bottom,#0008,transparent 84%)}
+.background-canvas{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+.background-art{position:absolute;top:103px;width:clamp(170px,15vw,245px);height:min(930px,calc(100vh - 105px));
+ background-size:100% auto;background-repeat:no-repeat;
+ filter:grayscale(.28) saturate(.82) contrast(1.07) brightness(.75);opacity:.32;
+ mask-image:linear-gradient(to bottom,transparent,#000 17%,#000 80%,transparent),linear-gradient(to right,transparent,#000 24%,#000 75%,transparent);
+ mask-composite:intersect}
+.art-left{left:0;background-image:url('assets/left-art.png');background-position:left top}
+.art-right{right:0;background-image:url('assets/right-art.png');background-position:right top}
+.container{width:min(var(--width),calc(100% - 72px))}
+.utility-bar{position:relative;z-index:3;background:#050905;color:#b1c9b6;border-bottom:1px solid #19321b;font-size:10px}
+.utility-inner{height:31px}
+.site-header{background:rgba(6,13,8,.97);color:var(--ink);border-color:#234827;box-shadow:0 8px 24px #0009;backdrop-filter:blur(16px)}
+.header-inner{height:79px;gap:26px}
+.brand{gap:11px}
+.brand-icon{width:47px;height:45px;background:linear-gradient(135deg,#5aff49,#0a9b19);color:#001706;border-radius:9px;box-shadow:0 0 22px #3fe92c2b}
+.brand-icon>span{font-size:20px;font-weight:950;letter-spacing:-2px;transform:none}
+.brand-name{font-size:25px;letter-spacing:-1px;color:#f5fff6}
+.brand-name>span,.footer-brand span{color:#58ff41}
+.brand-name small{color:#90a995;letter-spacing:1.2px;font-size:8px;margin-top:6px}
+.nav{gap:clamp(10px,1.8vw,25px)}
+.nav a{color:#dae4dc;font-size:12px;letter-spacing:.04px;font-weight:720;position:relative}
+.nav a.active,.nav a:hover{color:#64ff57}
+.nav .nav-arcade{background:#55ee3b;color:#001705;border:1px solid #6bff63;padding:11px 16px;border-radius:7px;box-shadow:0 0 22px #43e32a22}
+.nav .nav-arcade:hover{background:#b0ff98;color:#001705}
+.intro{position:relative;z-index:1;padding:59px 0 44px;align-items:center}
+.intro h1{font-size:clamp(44px,5.8vw,72px);font-weight:900;letter-spacing:-3px;line-height:1.05}
+.intro h1 em{font-weight:750;color:#70ff62}
+.intro-copy>p:last-child{color:#acbaaf;max-width:660px;font-size:15px}
+.edition-note{border-left:1px solid #285232;padding-left:22px}
+.edition-number{color:#f2fff1;font-size:46px}
+.edition-note>span:last-child{color:#8eaa92}
+.eyebrow{color:#72ff61}
+.eyebrow-square{background:#70f850}
+.featured{padding-bottom:84px;position:relative;z-index:1}
+.section-header h2{color:#f6fff8;font-weight:850}
+.section-overline,.section-description{color:#a0b1a4}
+.accent-dot{color:#57ff43}
+.feature-grid{gap:19px;grid-template-columns:minmax(0,1.65fr) minmax(0,.85fr)}
+.feature-main{background:var(--glass);border:1px solid #2a4d30;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.feature-main .story-copy{padding:23px 24px 28px}
+.image-frame{background:#1a2a20;isolation:isolate}
+.image-frame img{position:relative;z-index:1;object-fit:cover}
+.image-fallback{z-index:0;color:#f7fff5db;text-shadow:0 2px 19px #0008}
+.image-fallback i{color:#8aff68}
+.image-gta{background:linear-gradient(135deg,#193a37,#396c45 44%,#0d1218)}
+.image-sonic{background:linear-gradient(120deg,#153342,#35646a)}
+.image-dead{background:linear-gradient(120deg,#34451d,#395d3f)}
+.image-derelikt{background:linear-gradient(145deg,#102b2a,#31444b)}
+.image-manic{background:linear-gradient(135deg,#283532,#485a49)}
+.image-main{border-radius:0;aspect-ratio:16/8.8}
+.photo-mark{z-index:2;text-shadow:0 2px 8px #000}
+.story-copy h3{font-size:clamp(25px,2.4vw,34px);margin:13px 0 13px}
+.story-copy p,.side-story p{color:#adbaae}
+.tag{color:#7aff69}
+.text-link{border-color:#62ec50;color:#8dff75}
+.feature-side{gap:18px}
+.side-story{background:var(--glass);border:1px solid #2a4d30!important;border-radius:var(--radius);overflow:hidden;padding:0!important;box-shadow:var(--shadow);flex:1}
+.side-image{aspect-ratio:16/7.6;border-radius:0}
+.side-story-text{padding:14px 17px 18px}
+.side-story h3{font-size:17px;line-height:1.25;color:#f2fff3}
+.side-story p{font-size:12px}
+.section-pad{padding:79px 0}
+.news-section{position:relative;background:rgba(10,17,12,.75);border-color:#243729;z-index:1;backdrop-filter:blur(6px)}
+.filters{margin-bottom:22px;gap:9px}
+.filter-chip{background:#121e16;border:1px solid #294430;color:#c7d5c9;padding:10px 15px;border-radius:7px}
+.filter-chip:hover{background:#17291b;border-color:#4caa4f;color:#fff}
+.filter-chip.selected{background:#48d92f;border-color:#68ff57;color:#071407}
+.searchbox{background:#111d14;border-color:#315136;border-radius:7px;height:40px}
+.search-icon{color:#a5e4a2}
+.searchbox input{color:#f7fff7}
+.searchbox input::placeholder{color:#a1ada3}
+.searchbox:focus-within{border-color:#64ff4a;box-shadow:0 0 0 2px #3cff2830}
+.news-grid{gap:19px}
+.news-card{background:#121b15;border:1px solid #2b4230;border-radius:10px;box-shadow:var(--shadow);transition:transform .2s,border-color .2s;overflow:hidden}
+.news-card:hover{transform:translateY(-4px);border-color:#57b95c}
+.news-image{aspect-ratio:16/10}
+.news-card .card-body{padding:20px 18px}
+.news-card h3{font-size:16px;color:#f1fff2}
+.news-card p{color:#b2c0b4}
+.card-source{color:#a0b7a0;border-color:#29402e}
+.empty-message{background:#142318;border-color:#568153;color:#d4e4d4}
+.topics{background:linear-gradient(120deg,#0b1b0f,#15251a 60%,#071007);border-top:1px solid #1d4625;border-bottom:1px solid #25432a;position:relative;z-index:1}
+.eyebrow-invert{color:#83ff74}
+.topics p:not(.eyebrow){color:#b8cabb}
+.topics-list>a{color:#e3f5e6;border-color:#45624c}
+.topics-list>a:first-child{border-color:#45624c}
+.topics-list>a:hover{color:#73ff63}
+.topics-list>a span:first-child{color:#95b19c}
+.games-section{background:rgba(7,13,9,.82);position:relative;z-index:1}
+.games-grid{gap:17px}
+.game-card{background:#131e16;border:1px solid #29432e;border-radius:10px;box-shadow:var(--shadow)}
+.game-cover{background:#102417}
+.game-available{background:#4be63b;color:#071507;border-radius:5px;font-size:8px}
+.game-available.muted{background:#263e2a;color:#dbebdd}
+.game-type{color:#80ff6c}
+.game-body{padding:17px 15px}
+.game-body h3{color:#f4fff5}
+.game-body p{color:#afbfaf}
+.game-link{color:#84ff71}
+.p-01{background:linear-gradient(135deg,#11281c,#1d3c2a);color:#759780}
+.p-02{background:linear-gradient(135deg,#1d2532,#1b3f3d);color:#8299a2}
+.p-03{background:linear-gradient(135deg,#302139,#293e2b);color:#b3a5b0}
+.p-04{background:linear-gradient(135deg,#1e292f,#1d3929);color:#95b5ac}
+.games-caption{color:#a6b4a7}
+.about-section{position:relative;z-index:1;background:linear-gradient(115deg,#0f1e13,#16251b);border-top:1px solid #28452e;border-bottom:1px solid #28452e}
+.about-inner h2{color:#f3fff3}
+.about-copy p{color:#b7c8b9}
+.about-copy strong{color:#8bff7d}
+.about-badge{color:#a0ff92;border-color:#436b47}
+.site-footer{position:relative;z-index:1;background:#060b08;color:#e2efe4;border-top:1px solid #294a2c}
+.footer-brand{color:#f4fff5}
+.footer-brand small{color:#a0b5a5}
+.footer-main strong{color:#e9fce9}
+.footer-main a:not(.footer-brand),.footer-note p,.footer-bottom{color:#a0b1a3}
+.footer-main a:hover{color:#68ff5b}
+:focus-visible{outline-color:#6fff61}
+::selection{background:#2d902c;color:white}
+@media(max-width:1500px){.background-art{opacity:.24}}
+@media(max-width:1320px){.background-art{opacity:.14}.container{width:min(var(--width),calc(100% - 54px))}}
+@media(max-width:1100px){.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-grid{grid-template-columns:1.4fr 1fr}.background-art{display:none}}
+@media(max-width:800px){
+ .container{width:calc(100% - 38px)}
+ .site-header .header-inner{height:71px}
+ .menu-toggle{background:#122219;border:1px solid #33653c;border-radius:7px}
+ .menu-toggle span{background:#78ff69}
+ .nav{top:71px;background:#08120a;border-color:#315338;box-shadow:0 16px 24px #0009}
+ .nav a{border-color:#28472d;color:#edf5ee}
+ .intro{padding-top:43px}
+ .feature-grid{grid-template-columns:1fr}
+ .feature-side{display:grid;grid-template-columns:1fr 1fr}
+ .feature-main .story-copy{padding:19px 20px 22px}
+ .section-pad{padding:61px 0}
+}
+@media(max-width:570px){
+ .container{width:calc(100% - 30px)}
+ .brand-name{font-size:20px}
+ .brand-icon{width:38px;height:38px}
+ .brand-icon>span{font-size:18px}
+ .intro h1{font-size:clamp(40px,10vw,57px)}
+ .intro{padding-top:38px;padding-bottom:34px}
+ .featured{padding-bottom:57px}
+ .feature-side{grid-template-columns:1fr}
+ .side-story{display:grid;grid-template-columns:40% 1fr;align-items:stretch}
+ .side-image{height:100%;aspect-ratio:auto}
+ .side-story-text{padding:11px 11px 13px}
+ .side-story p{display:none}
+ .story-copy h3{font-size:25px}
+ .story-copy p{font-size:13px}
+ .news-grid{grid-template-columns:1fr}
+ .news-card{display:block}
+ .news-image{min-height:0;aspect-ratio:16/9}
+ .news-card .card-body{padding:16px 17px 20px}
+ .news-card p{display:block}
+ .news-card h3{font-size:18px}
+ .games-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .topics{padding:42px 0}
+ .footer-main{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){.news-card{transition:none}}
